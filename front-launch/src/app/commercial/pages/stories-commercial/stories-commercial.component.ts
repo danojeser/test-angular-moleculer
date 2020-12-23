@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoriesCommercialComponent implements OnInit {
 
+  testArray = new Array(6);
+
   constructor() { }
 
   ngOnInit(): void {
