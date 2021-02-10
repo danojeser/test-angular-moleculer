@@ -1,28 +1,33 @@
 <section class="py-5 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">Nuestros veterinarios</h1>
-      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+      <h1 class="fw-light">Nuestro personal</h1>
     </div>
   </div>
 </section>
 
 <section>
 
-  <div class="container">
-    <div class="row">
+  <ng-container *ngFor="let departamento of personal">
+    <div class="container">
+      <h2>{{departamento.nombre}}</h2>
+      <div class="row">
 
-      <div class="col-3 p-0" *ngFor="let item of arrayTest">
-        <div class="card m-2">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-4 p-0" *ngFor="let persona of departamento.personal">
+          <div class="card m-2">
+            <img class="card-img-top" src="{{persona.img}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{persona.nombre}}</h5>
+              <p class="card-text">{{persona.puesto}}</p>
+              <p class="card-text">{{persona.ciudad}}</p>
+              <p class="card-text">{{persona.cod}}</p>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
+  </ng-container>
+
 
 </section>
